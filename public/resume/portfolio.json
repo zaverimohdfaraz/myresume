@@ -54,7 +54,7 @@
     "id": 3,
     "name": "Nexgeno Official Website",
     "website": "nexgeno.in",
-    "image": "/resume/img/projects/nexgeno.in.PNG",
+    "image": "/resume/img/projects/nexgenoin1.JPG",
     "stacks": "Nextjs & Nodejs",
     "software_desc_1": " I Will update later..",
     "learn": [
@@ -88,8 +88,8 @@
   {
     "id": 5,
     "name": "Resume SPA",
-    "website": " I Will update later..",
-    "image": "/resume/img/projects/farazweb.PNG",
+    "website": "myresume-fsk8oapmf-mohd-faraz-zaveris-projects.vercel.app",
+    "image": "/resume/img/projects/farazweb1.JPG",
     "stacks": "Vue 3,Javascript",
     "software_desc_1": " I Will update later..",
     "learn": [

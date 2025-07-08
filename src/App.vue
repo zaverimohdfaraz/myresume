@@ -97,7 +97,7 @@ export default {
               ></span>
               <div class="contacts-block__info">
                 <span class="overhead">Birthday</span>
-                <span class="text-overflow" title="April 29, 1996"
+                <span class="text-overflow" title="June 26, 2004"
                   >June 26, 2004</span
                 >
               </div>
