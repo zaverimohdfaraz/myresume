@@ -50,25 +50,9 @@
     "type": "Customized Application"
   },
  
+  
   {
     "id": 3,
-    "name": "Nexgeno Official Website",
-    "website": "nexgeno.in",
-    "image": "public/resume/img/projects/nexgenoin1.JPG",
-    "stacks": "Nextjs & Nodejs",
-    "software_desc_1": " I Will update later..",
-    "learn": [
-      {
-        "id": 1,
-        "content": "I Will update later.."
-      }
-    ],
-    "role": "Fullstack Developer",
-    "type": "CMS"
-  },
- 
-  {
-    "id": 4,
     "name": "Vallum",
     "website": "vallum.in",
     "image": "/resume/img/projects/vallum.JPG",
@@ -82,23 +66,7 @@
     ],
     "role": "Fullstack Developer",
     "type": "CMS Application"
-  },
- 
- 
-  {
-    "id": 5,
-    "name": "Resume SPA",
-    "website": "myresume-fsk8oapmf-mohd-faraz-zaveris-projects.vercel.app",
-    "image": "public/resume/img/projects/farazweb1.JPG",
-    "stacks": "Vue 3,Javascript",
-    "software_desc_1": " I Will update later..",
-    "learn": [
-      {
-        "id": 1,
-        "content": "I Will update later.."
-      }
-    ],
-    "role": "Fullstack Developer",
-    "type": "Portfolio Website"
   }
+ 
+ 
 ]
