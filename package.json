@@ -1,6 +1,7 @@
 {
   "name": "my-resume",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,6 +17,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
-    "vite": "^3.0.9"
+    "vite": "^3.2.11"
   }
 }
