@@ -1,0 +1,104 @@
+[
+  {
+    "id": 0,
+    "name": "Lijjat Papad",
+    "website": "lijjat.com",
+    "image": "/resume/img/projects/lijjat.JPG",
+    "stacks": "Laravel 9",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "E-commerce Application"
+  },
+  
+  
+  {
+    "id": 1,
+    "name": "Motiwala & Sons",
+    "website": "escrowv.com",
+    "image": "/resume/img/projects/motiwala.JPG",
+    "stacks": "Laravel 9",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "Customized Application"
+  },
+  {
+    "id": 2,
+    "name": "Attari Classes LMS",
+    "website": "lms.attariclasses.in",
+    "image": "/resume/img/projects/attari-classes.JPG",
+    "stacks": "CodeIgniter 3",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "Customized Application"
+  },
+ 
+  {
+    "id": 3,
+    "name": "Nexgeno Official Website",
+    "website": "nexgeno.in",
+    "image": "/resume/img/projects/nexgeno.in.PNG",
+    "stacks": "Nextjs & Nodejs",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "CMS"
+  },
+ 
+  {
+    "id": 4,
+    "name": "Vallum",
+    "website": "vallum.in",
+    "image": "/resume/img/projects/vallum.JPG",
+    "stacks": "Reactjs & Nodejs",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "CMS Application"
+  },
+ 
+ 
+  {
+    "id": 5,
+    "name": "Resume SPA",
+    "website": " I Will update later..",
+    "image": "/resume/img/projects/farazweb.PNG",
+    "stacks": "Vue 3,Javascript",
+    "software_desc_1": " I Will update later..",
+    "learn": [
+      {
+        "id": 1,
+        "content": "I Will update later.."
+      }
+    ],
+    "role": "Fullstack Developer",
+    "type": "Portfolio Website"
+  }
+]
