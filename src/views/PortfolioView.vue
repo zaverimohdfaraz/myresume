@@ -16,7 +16,8 @@
         <RouterLink
           :to="'/project/' + makeReadableURL(work.name) + '/' + work.id"
         >
-          <img class="rounded" v-lazy="work.image" />
+         <img class="rounded" :src="work.image" />
+
           <h6 class="mt-2 mb-4">{{ work.name }}</h6>
         </RouterLink>
       </div>
