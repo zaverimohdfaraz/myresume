@@ -186,9 +186,9 @@ export default {
         },
         {
           id: 1,
-          title: "Data Analyst",
+          title: "Data Analyst(Intern)",
           desc: "At Imperial Digital Solutions.",
-          year: "2024",
+          year: "2024(3 months)",
         },
        
       ],
