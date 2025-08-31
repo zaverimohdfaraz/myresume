@@ -137,12 +137,12 @@ export default {
               href="https://github.com/farazgit1"
               ><i class="fa-brands fa-github"></i
             ></a>
-            <a
+            <!-- <a
               target="_blank"
               class="social__link"
               href="https://www.instagram.com/faraz.zaveri/"
               ><i class="fa-brands fa-instagram"></i
-            ></a>
+            ></a> -->
             <a
               target="_blank"
               class="social__link"
