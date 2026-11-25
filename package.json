@@ -1,22 +1,28 @@
 {
-  "name": "my-resume",
-  "version": "0.0.0",
-  "type": "module",
+  "name": "faraz-zaveri-portfolio",
+  "version": "3.0.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "axios": "^1.6.5",
-    "lazy-load-vue3": "^1.2.8",
-    "nprogress": "^0.2.0",
-    "sweetalert2": "^11.5.2",
-    "vue": "^3.2.38",
-    "vue-router": "^4.1.5"
+    "@fontsource-variable/fraunces": "^5.2.0",
+    "@fontsource-variable/hanken-grotesk": "^5.2.0",
+    "framer-motion": "^12.43.0",
+    "next": "^16.4.6",
+    "nodemailer": "^10.6.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "vite": "^3.2.11"
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.7",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.1",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2"
   }
 }
