@@ -11,6 +11,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Pin the project root so a stray package-lock.json in a parent folder isn't picked up
+  turbopack: { root: __dirname },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

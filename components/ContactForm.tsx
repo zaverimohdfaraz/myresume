@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 type Status = { state: "idle" | "sending" | "sent" | "error"; message?: string };
 
@@ -27,37 +28,35 @@ export default function ContactForm() {
     }
   }
 
+  // Inputs are underlined and draw their accent line on focus.
   const field =
-    "mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-base text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25";
+    "peer block w-full border-0 border-b border-line bg-transparent px-0 py-3 text-lg text-ink placeholder:text-muted/50 focus:outline-none focus:ring-0";
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm text-muted">
-          Your name
+    <form onSubmit={onSubmit} className="grid gap-10">
+      <div className="grid gap-10 sm:grid-cols-2">
+        <Underlined label="Your name">
           <input name="name" required maxLength={100} autoComplete="name" className={field} />
-        </label>
-        <label className="block text-sm text-muted">
-          Email
+        </Underlined>
+        <Underlined label="Email">
           <input name="email" type="email" required maxLength={200} autoComplete="email" className={field} />
-        </label>
+        </Underlined>
       </div>
-      <label className="block text-sm text-muted">
-        What do you need built?
+      <Underlined label="What do you need built?">
         <textarea
           name="message"
           required
           minLength={10}
           maxLength={5000}
-          rows={6}
+          rows={5}
           placeholder="A CRM for my team, a website for my business, a job opening…"
-          className={field}
+          className={`${field} resize-none`}
         />
-      </label>
+      </Underlined>
       {/* Honeypot: bots fill this, people never see it */}
       <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-      <div className="flex flex-wrap items-center gap-4">
-        <button type="submit" disabled={status.state === "sending"} className="rounded-full bg-accent px-7 py-3 font-semibold text-paper hover:brightness-110 disabled:opacity-60">
+      <div className="flex flex-wrap items-center gap-6">
+        <button type="submit" disabled={status.state === "sending"} className="rounded-full bg-accent px-8 py-4 text-lg font-semibold text-paper hover:brightness-110 disabled:opacity-60">
           {status.state === "sending" ? "Sending…" : "Send message"}
         </button>
         <p role="status" aria-live="polite" className={status.state === "error" ? "text-sm text-red-400" : "text-sm text-muted"}>
@@ -65,5 +64,20 @@ export default function ContactForm() {
         </p>
       </div>
     </form>
+  );
+}
+
+function Underlined({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="relative block text-sm text-muted">
+      {label}
+      <span className="relative mt-1 block">
+        {children}
+        <motion.span
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 peer-focus:scale-x-100"
+        />
+      </span>
+    </label>
   );
 }

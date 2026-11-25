@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Reveal from "@/components/motion/Reveal";
+import Words from "@/components/motion/Words";
+import Parallax from "@/components/motion/Parallax";
 import ProjectArt from "@/components/ProjectArt";
 import { projects, tiers } from "@/lib/data";
 
@@ -23,62 +27,76 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const tier = tiers.find((t) => t.id === p.tier);
 
   return (
-    <article className="mx-auto max-w-5xl px-5 pb-24 pt-14 sm:px-8 sm:pt-20">
+    <article className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-16">
       <Link href="/work" className="text-muted hover:text-ink">
         Back to all work
       </Link>
-      <p className="mt-10 text-accent">{tier?.title}</p>
-      <h1 className="mt-3 text-5xl font-semibold text-balance sm:text-7xl">{p.name}</h1>
-      <p className="mt-6 max-w-3xl text-xl text-muted">{p.summary}</p>
+      <p className="mt-12 text-accent">{tier?.title}</p>
+      <h1 className="mt-4 text-6xl font-semibold text-balance sm:text-8xl">
+        <Words text={p.name} />
+      </h1>
+      <Reveal delay={0.4}>
+        <p className="mt-8 max-w-3xl text-xl text-muted">{p.summary}</p>
+      </Reveal>
 
-      <div className="mt-12">
-        <ProjectArt project={p} priority variant="full" />
-      </div>
+      <Reveal className="mt-16">
+        {p.image ? (
+          <Parallax className="aspect-[16/9] rounded-3xl border border-line">
+            <Image src={p.image} alt={`Screenshot of ${p.name}`} fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover object-top" />
+          </Parallax>
+        ) : (
+          <ProjectArt project={p} priority variant="full" />
+        )}
+      </Reveal>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_16rem]">
-        <div>
-          <p className="text-lg">{p.description}</p>
-          <ul className="mt-8 space-y-4">
+      <div className="mt-20 grid gap-16 lg:grid-cols-[1fr_18rem]">
+        <Reveal>
+          <p className="text-xl text-ink/90">{p.description}</p>
+          <ul className="mt-12 divide-y divide-line border-y border-line">
             {p.highlights.map((h) => (
-              <li key={h} className="flex gap-4">
-                <span aria-hidden className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <li key={h} className="flex gap-5 py-5 text-ink/85">
+                <span aria-hidden className="mt-3 h-px w-5 shrink-0 bg-accent" />
                 {h}
               </li>
             ))}
           </ul>
-        </div>
-        <dl className="space-y-6 text-sm">
-          <div>
-            <dt className="text-muted">Client</dt>
-            <dd className="mt-1 text-base">{p.client}</dd>
-          </div>
-          <div>
-            <dt className="text-muted">Stack</dt>
-            <dd className="mt-2 flex flex-wrap gap-2">
-              {p.stack.map((s) => (
-                <span key={s} className="rounded-full border border-line px-3 py-1 text-muted">
-                  {s}
-                </span>
-              ))}
-            </dd>
-          </div>
-          {p.url && (
+        </Reveal>
+        <Reveal delay={0.15}>
+          <dl className="space-y-8 text-sm">
             <div>
-              <dt className="text-muted">Live site</dt>
-              <dd className="mt-1">
-                <a href={`https://${p.url}`} target="_blank" rel="noopener" className="text-base underline decoration-accent underline-offset-4 hover:text-accent">
-                  {p.url}
-                </a>
+              <dt className="text-muted">Client</dt>
+              <dd className="mt-1 text-base">{p.client}</dd>
+            </div>
+            <div>
+              <dt className="text-muted">Stack</dt>
+              <dd className="mt-3 flex flex-wrap gap-2">
+                {p.stack.map((s) => (
+                  <span key={s} className="rounded-full border border-line px-3 py-1 text-muted">
+                    {s}
+                  </span>
+                ))}
               </dd>
             </div>
-          )}
-        </dl>
+            {p.url && (
+              <div>
+                <dt className="text-muted">Live site</dt>
+                <dd className="mt-1">
+                  <a href={`https://${p.url}`} target="_blank" rel="noopener" className="text-base underline decoration-accent underline-offset-4 hover:text-accent">
+                    {p.url}
+                  </a>
+                </dd>
+              </div>
+            )}
+          </dl>
+        </Reveal>
       </div>
 
-      <Link href={`/work/${next.slug}`} className="mt-24 block rounded-2xl border border-line bg-surface p-8 hover:border-accent/50 sm:p-12">
-        <p className="text-muted">Next project</p>
-        <p className="mt-2 font-display text-4xl font-semibold sm:text-6xl">{next.name}</p>
-      </Link>
+      <Reveal className="mt-32">
+        <Link href={`/work/${next.slug}`} className="group block rounded-[2.5rem] border border-line bg-surface p-10 transition-colors hover:border-accent/40 sm:p-16">
+          <p className="text-muted">Next project</p>
+          <p className="mt-4 font-display text-5xl font-semibold transition-colors group-hover:text-accent sm:text-8xl">{next.name}</p>
+        </Link>
+      </Reveal>
     </article>
   );
 }

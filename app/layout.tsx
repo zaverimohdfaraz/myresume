@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Glow from "@/components/motion/Glow";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://myresume-coral-five.vercel.app"),
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: "#0b0b0c" };
+export const viewport: Viewport = { themeColor: "#07080a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,8 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-paper">
           Skip to content
         </a>
+        <Glow />
         <Nav />
-        <main id="main">{children}</main>
+        <main id="main" className="relative z-10">{children}</main>
         <Footer />
       </body>
     </html>

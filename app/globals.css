@@ -3,12 +3,12 @@
 @import "@fontsource-variable/hanken-grotesk";
 
 @theme {
-  --color-paper: #0b0b0c;
-  --color-surface: #141416;
-  --color-raised: #1c1c1f;
-  --color-line: #2a2a2e;
-  --color-ink: #efeee9;
-  --color-muted: #9d9ca0;
+  --color-paper: #07080a;
+  --color-surface: #0e1013;
+  --color-raised: #161a1f;
+  --color-line: #20252c;
+  --color-ink: #f1f3f5;
+  --color-muted: #8a929d;
   --color-accent: #4cc2ff;
   --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
   --font-sans: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
@@ -27,12 +27,13 @@
     font-size: 1.0625rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   h1, h2, h3 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
-    letter-spacing: -0.025em;
-    line-height: 1.02;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
   }
   ::selection {
     background: var(--color-accent);
@@ -45,13 +46,18 @@
   }
 }
 
-/* Cursor-following light for cards. Position is set by the Spot component. */
-.spot {
-  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(76, 194, 255, 0.16), transparent 62%);
+/* Endless skills ticker. Pauses on hover (see Marquee). */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 46s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
